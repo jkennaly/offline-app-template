@@ -1,0 +1,8 @@
+CACHE MANIFEST
+index.html
+assets/js/main.js
+../vendors/angularjs/angular.min.js
+../vendors/modernizr/modernizr-latest.js
+assets/styles/styles.css
+assets/images/palm_tree.ico
+#Rev 0
