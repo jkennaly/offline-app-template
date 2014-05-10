@@ -2,10 +2,10 @@
  * Created by jbk on 1/11/14.
  */
 angular.module('people', [])
-    .config(function($rootScope){
-        $scope.people = $rootScope.data.followedUsers;
-        $scope.others = $rootScope.data.unfollowedUsers;
-        $scope.preGameMessages = $rootScope.data.pregameFollowed;
+    .config(function($scope){
+        $scope.people = JSON.parse(localStorage.getItem('followedUsers'));
+        $scope.others = JSON.parse(localStorage.getItem('unfollowedUsers'));
+        $scope.preGameMessages = JSON.parse(localStorage.getItem('pregameFollowed'));
     })
 
     .config(function($routeProvider){
@@ -42,11 +42,11 @@ angular.module('people', [])
         return{
             id: retPerson.id,
             userName: retPerson.userName,
-            location: retPerson.location,
             preGameMessages: retPerson.preGameMessages,
             gametimeMessages: retPerson.gametimeMessages,
             coordX: retPerson.coordX,
-            coordY: retPerson.coordY
+            coordY: retPerson.coordY,
+            location: retPerson.location
         }
     })
 
